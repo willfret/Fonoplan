@@ -1,0 +1,1471 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173b3f">
+  <meta name="description" content="FonoPlan: planificación, evaluación y seguimiento fonoaudiológico individual.">
+  <title>FonoPlan · Diagnóstico y seguimiento</title>
+  <style>
+:root{--ink:#18383a;--muted:#66777a;--line:#dce6e4;--paper:#fff;--canvas:#f2f5f1;--teal:#226b68;--teal-2:#dcecea;--coral:#e87c5d;--coral-2:#fce8e1;--gold:#d5a52e;--gold-2:#fbf1d5;--red:#b95047;--red-2:#f8e5e3;--shadow:0 18px 45px rgba(25,58,58,.09);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--canvas)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px}.app-shell{min-height:100vh;display:grid;grid-template-columns:260px 1fr}.sidebar{position:sticky;top:0;height:100vh;background:#163c3e;color:#eef7f5;padding:28px 18px;display:flex;flex-direction:column;z-index:5}.brand{display:flex;align-items:center;gap:12px;padding:0 9px 28px}.brand-mark{width:43px;height:43px;border-radius:14px;background:var(--coral);display:grid;place-items:center;font-weight:900;letter-spacing:-1px}.brand strong,.brand span{display:block}.brand strong{font-family:Georgia,serif;font-size:22px}.brand span{font-size:12px;opacity:.72;margin-top:2px}.sidebar nav{display:grid;gap:6px}.nav-item{border:0;background:transparent;color:#d7e8e5;padding:12px 14px;text-align:left;border-radius:12px;font-size:14px;cursor:pointer;display:flex;gap:12px;align-items:center}.nav-item span{width:18px;text-align:center;font-size:17px}.nav-item:hover,.nav-item.active{background:rgba(255,255,255,.11);color:#fff}.sidebar-foot{margin-top:auto;border-top:1px solid rgba(255,255,255,.12);padding:20px 8px 0}.sidebar-foot p{font-size:12px;line-height:1.5;opacity:.68}.sidebar .ghost{color:white;border-color:rgba(255,255,255,.3)}main{min-width:0}.topbar{height:82px;background:rgba(255,255,255,.87);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 36px;position:sticky;top:0;z-index:4}.student-switcher{display:flex;flex-direction:column;gap:4px}.student-switcher label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:800}.student-switcher select{border:0;background:transparent;font-weight:750;font-size:15px;color:var(--ink);padding:0 24px 0 0}.top-actions{display:flex;align-items:center;gap:14px}.save-state{font-size:12px;color:var(--muted)}button,input,select,textarea{font:inherit}.primary,.secondary,.ghost,.danger{border-radius:10px;padding:10px 15px;font-weight:750;cursor:pointer;border:1px solid transparent}.primary{background:var(--teal);color:#fff}.primary:hover{background:#195956}.secondary{background:var(--paper);border-color:var(--line);color:var(--ink)}.secondary:hover,.ghost:hover{background:#edf3f1}.ghost{background:transparent;border-color:var(--line);color:var(--ink)}.danger{background:var(--red-2);color:var(--red)}.full{width:100%}.menu-btn{display:none;border:0;background:transparent;font-size:24px}.view{display:none;padding:38px;max-width:1480px;margin:auto}.view.active{display:block}.page-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:28px}.page-head h1{font-family:Georgia,serif;font-weight:500;font-size:36px;letter-spacing:-.025em;margin:4px 0 6px}.page-head p{margin:0;color:var(--muted);max-width:760px}.eyebrow{text-transform:uppercase;letter-spacing:.12em;color:var(--coral);font-size:11px;font-weight:900}.head-actions{display:flex;gap:10px;flex-wrap:wrap}.card{background:var(--paper);border:1px solid rgba(30,81,79,.09);border-radius:18px;box-shadow:0 2px 2px rgba(15,44,43,.02);padding:22px}.hero{background:linear-gradient(125deg,#173f40 0%,#245f5d 72%,#32736e 100%);color:white;display:grid;grid-template-columns:1.35fr .65fr;gap:30px;padding:32px;border:0;overflow:hidden;position:relative}.hero:after{content:"";position:absolute;width:270px;height:270px;border:55px solid rgba(255,255,255,.05);border-radius:50%;right:-80px;top:-105px}.hero h1{font-family:Georgia,serif;font-size:37px;font-weight:500;margin:8px 0 12px}.hero p{color:#d4e5e3;max-width:650px;line-height:1.6}.hero-actions{display:flex;gap:10px;margin-top:22px}.hero .primary{background:var(--coral)}.hero .ghost{border-color:rgba(255,255,255,.35);color:#fff}.hero-metric{align-self:center;position:relative;z-index:1}.progress-ring{width:170px;height:170px;border-radius:50%;display:grid;place-items:center;margin:auto;background:conic-gradient(var(--coral) calc(var(--progress)*1%),rgba(255,255,255,.14) 0);position:relative}.progress-ring:before{content:"";position:absolute;inset:13px;background:#245d5b;border-radius:50%}.progress-ring div{position:relative;text-align:center}.progress-ring strong{font-size:36px;display:block}.progress-ring span{font-size:12px;color:#d2e3e1}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:18px 0}.metric{padding:19px}.metric .label{font-size:12px;color:var(--muted);font-weight:700}.metric strong{display:block;font-size:27px;margin-top:8px}.metric small{display:block;color:var(--muted);margin-top:4px}.dashboard-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:18px}.card h2{font-family:Georgia,serif;font-weight:500;font-size:22px;margin:0 0 6px}.subtle{color:var(--muted);font-size:13px}.area-list{margin-top:22px;display:grid;gap:15px}.area-progress{display:grid;grid-template-columns:150px 1fr 42px;gap:12px;align-items:center;font-size:13px}.area-progress .bar{height:9px;background:#eef2ef;border-radius:9px;overflow:hidden}.area-progress .bar i{display:block;height:100%;background:var(--teal);border-radius:inherit}.activity-list{display:grid;gap:2px;margin:12px -8px 0}.activity{display:grid;grid-template-columns:42px 1fr auto;gap:10px;align-items:center;padding:12px 8px;border-bottom:1px solid #edf1ef}.activity:last-child{border:0}.date-box{width:42px;height:42px;background:var(--teal-2);border-radius:10px;display:grid;place-items:center;color:var(--teal);font-weight:900;font-size:12px}.activity b{display:block;font-size:13px}.activity small{color:var(--muted)}.empty{padding:34px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px;margin-top:16px}.form-card{max-width:960px}.form-grid{display:grid;gap:17px}.form-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.form-grid label{display:grid;gap:7px;font-size:12px;font-weight:800;color:#385356}.form-grid .wide{grid-column:1/-1}.form-grid input,.form-grid select,.form-grid textarea,.filter-row input,.filter-row select{width:100%;border:1px solid #cedbd8;background:#fff;border-radius:10px;padding:11px 12px;color:var(--ink);outline:none}.form-grid input:focus,.form-grid select:focus,.form-grid textarea:focus,.filter-row input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(34,107,104,.12)}.section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.section-title h2{margin:0}.filter-row{display:grid;grid-template-columns:1fr 190px 180px;gap:10px;margin-bottom:18px}.plan-group{margin-bottom:16px;overflow:hidden;padding:0}.plan-group-head{padding:16px 18px;background:#f4f7f5;display:flex;justify-content:space-between;align-items:center}.plan-group-head h3{margin:0;font-size:15px}.plan-group-head span{font-size:12px;color:var(--muted)}.objective-row{display:grid;grid-template-columns:1fr 120px 120px;gap:12px;align-items:center;padding:13px 18px;border-top:1px solid #edf1ef;font-size:13px}.semester-toggle{display:flex;align-items:center;justify-content:center;gap:7px;font-weight:750;color:var(--muted);cursor:pointer}.semester-toggle input{width:18px;height:18px;accent-color:var(--teal)}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:15px;background:white}.data-table{width:100%;border-collapse:collapse;min-width:820px}.data-table th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);background:#f6f8f6;text-align:left;padding:13px;border-bottom:1px solid var(--line)}.data-table td{padding:13px;border-bottom:1px solid #edf1ef;font-size:13px;vertical-align:top}.data-table tr:last-child td{border-bottom:0}.pill{display:inline-flex;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:850;white-space:nowrap}.pill.L{background:var(--teal-2);color:var(--teal)}.pill.D{background:var(--gold-2);color:#8a6815}.pill.NL{background:var(--red-2);color:var(--red)}.pill.blank,.pill.NE{background:#edf1ef;color:var(--muted)}.row-actions{display:flex;gap:5px}.icon-btn{border:0;background:transparent;color:var(--muted);font-size:20px;cursor:pointer;padding:4px 8px}.tabs{display:flex;gap:4px;padding:4px;background:#e8eeeb;border-radius:11px;width:max-content;margin-bottom:18px}.tab-btn{border:0;background:transparent;border-radius:8px;padding:8px 14px;cursor:pointer;color:var(--muted);font-weight:750}.tab-btn.active{background:white;color:var(--ink);box-shadow:0 2px 8px rgba(25,50,50,.07)}.report-sheet{background:white;padding:48px;max-width:1000px;margin:auto;border:1px solid var(--line);box-shadow:var(--shadow)}.report-title{text-align:center;border-bottom:3px solid var(--ink);padding-bottom:16px;margin-bottom:22px}.report-title h1{font-family:Georgia,serif;font-size:26px;margin:0}.report-meta{display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;background:#f4f7f5;padding:16px;margin-bottom:20px;font-size:13px}.report-intro{line-height:1.55}.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}.result-box{padding:16px;border-radius:12px}.result-box strong{font-size:24px;display:block}.result-box.L{background:var(--teal-2);color:var(--teal)}.result-box.D{background:var(--gold-2);color:#7b5c13}.result-box.NL{background:var(--red-2);color:var(--red)}.report-area{margin-top:22px}.report-area h3{font-size:14px;border-bottom:1px solid var(--line);padding-bottom:7px}.report-objective{display:grid;grid-template-columns:1fr auto;gap:15px;padding:8px 0;font-size:13px;border-bottom:1px dotted #dfe5e3}.report-notes{margin-top:28px;border:1px solid var(--line);padding:18px;min-height:110px}.signature{margin:70px auto 10px;width:260px;border-top:1px solid var(--ink);text-align:center;padding-top:8px;font-size:12px}dialog{border:0;border-radius:18px;padding:0;width:min(720px,calc(100% - 32px));box-shadow:0 30px 90px rgba(20,47,47,.28)}dialog::backdrop{background:rgba(13,34,35,.55);backdrop-filter:blur(3px)}dialog form{padding:26px}.dialog-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px}.dialog-head h2{font-family:Georgia,serif;margin:3px 0 0;font-weight:500}.dialog-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:24px}.toast{position:fixed;right:24px;bottom:24px;background:#173c3e;color:#fff;padding:12px 17px;border-radius:10px;box-shadow:var(--shadow);transform:translateY(80px);opacity:0;transition:.25s;z-index:20}.toast.show{transform:none;opacity:1}.muted-block{padding:17px;background:#f4f7f5;border-radius:12px;color:var(--muted);font-size:13px;line-height:1.5}.danger-zone{margin-top:26px;border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;align-items:center}.screen-only{}
+.metrics{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}.evaluation-layout{display:grid;grid-template-columns:280px 1fr;gap:18px;align-items:start}.evaluation-summary{position:sticky;top:102px}.summary-number{font-size:34px;font-weight:850;display:block;margin:6px 0}.legend{display:grid;gap:8px;margin-top:20px}.legend div{display:flex;justify-content:space-between;font-size:12px}.evaluation-row{display:grid;grid-template-columns:1fr 170px;gap:12px;align-items:center;padding:13px 18px;border-top:1px solid #edf1ef;font-size:13px}.evaluation-row select{border:1px solid #cedbd8;border-radius:9px;padding:8px;background:#fff;color:var(--ink)}.clinical-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}.clinical-grid .wide{grid-column:1/-1}.clinical-note{padding:14px 16px;border-left:4px solid var(--coral);background:var(--coral-2);font-size:13px;line-height:1.5;margin-bottom:18px}.report-clinical{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}.report-clinical>div{padding:14px;border:1px solid var(--line);border-radius:10px}.report-clinical strong{display:block;margin-bottom:5px}.coverage{height:7px;border-radius:7px;background:#e9efec;overflow:hidden;margin-top:9px}.coverage i{display:block;height:100%;background:var(--coral)}.session-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:5px}.session-meta span{font-size:11px;color:var(--muted);background:#f1f4f2;border-radius:999px;padding:3px 7px}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid rgba(232,124,93,.42);outline-offset:2px}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:10px;top:10px;z-index:50;background:#fff;padding:10px}
+@media(max-width:1000px){.app-shell{grid-template-columns:1fr}.sidebar{position:fixed;transform:translateX(-100%);transition:.22s;width:260px}.sidebar.open{transform:none}.menu-btn{display:block}.topbar{padding:0 20px}.view{padding:26px 20px}.metrics{grid-template-columns:repeat(2,1fr)}.dashboard-grid,.evaluation-layout{grid-template-columns:1fr}.evaluation-summary{position:static}.hero{grid-template-columns:1fr}.hero-metric{display:none}}
+@media(max-width:650px){.top-actions .save-state{display:none}.top-actions .secondary{font-size:0}.top-actions .secondary:after{content:"+";font-size:22px}.page-head{align-items:flex-start;flex-direction:column}.page-head h1{font-size:29px}.metrics{grid-template-columns:1fr 1fr}.filter-row{grid-template-columns:1fr}.objective-row,.evaluation-row{grid-template-columns:1fr}.form-grid.two,.clinical-grid{grid-template-columns:1fr}.form-grid .wide,.clinical-grid .wide{grid-column:auto}.report-sheet{padding:24px 18px}.report-meta,.result-grid,.report-clinical{grid-template-columns:1fr}.area-progress{grid-template-columns:110px 1fr 35px}}
+@media print{body{background:#fff}.sidebar,.topbar,.screen-only,.page-head{display:none!important}.app-shell{display:block}.view{display:none!important;padding:0}.view.active{display:block!important}.report-sheet{box-shadow:none;border:0;padding:0;max-width:none}.report-objective{break-inside:avoid}.report-area{break-inside:auto}@page{size:A4;margin:14mm}}
+
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navegación principal">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">FP</div>
+        <div><strong>FonoPlan</strong><span>Seguimiento individual</span></div>
+      </div>
+      <nav id="main-nav">
+        <button class="nav-item active" data-view="inicio"><span>◰</span> Resumen</button>
+        <button class="nav-item" data-view="ficha"><span>○</span> Ficha del estudiante</button>
+        <button class="nav-item" data-view="evaluacion"><span>◈</span> Evaluación inicial</button>
+        <button class="nav-item" data-view="plan"><span>✓</span> Plan anual</button>
+        <button class="nav-item" data-view="sesiones"><span>◷</span> Registro de sesiones</button>
+        <button class="nav-item" data-view="informe"><span>≡</span> Informe semestral</button>
+      </nav>
+      <div class="sidebar-foot">
+        <p>Datos guardados solo en este equipo.</p>
+        <button class="ghost full" id="backup-btn">Crear respaldo</button>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <button class="menu-btn" id="menu-btn" aria-label="Abrir menú">☰</button>
+        <div class="student-switcher">
+          <label for="student-select">Estudiante activo</label>
+          <select id="student-select"></select>
+        </div>
+        <div class="top-actions">
+          <span class="save-state" id="save-state">Guardado</span>
+          <button class="secondary" id="new-student-btn">Nuevo estudiante</button>
+        </div>
+      </header>
+
+      <section id="view-inicio" class="view active"></section>
+      <section id="view-ficha" class="view"></section>
+      <section id="view-evaluacion" class="view"></section>
+      <section id="view-plan" class="view"></section>
+      <section id="view-sesiones" class="view"></section>
+      <section id="view-informe" class="view"></section>
+    </main>
+  </div>
+
+  <dialog id="student-dialog">
+    <form method="dialog" id="student-form">
+      <div class="dialog-head"><div><span class="eyebrow">Nueva ficha</span><h2>Agregar estudiante</h2></div><button type="button" class="icon-btn" data-close-dialog aria-label="Cerrar">×</button></div>
+      <div class="form-grid two">
+        <label>Nombre completo<input name="name" required autocomplete="off"></label>
+        <label>Curso<input name="course" required autocomplete="off"></label>
+        <label>Profesional<input name="professional" value="María José Zamorano Díaz" required autocomplete="off"></label>
+        <label>Año<input name="year" type="number" min="2020" max="2100" required></label>
+      </div>
+      <div class="dialog-actions"><button type="button" data-close-dialog class="ghost">Cancelar</button><button value="default" class="primary" id="create-student-submit">Crear ficha</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="session-dialog">
+    <form method="dialog" id="session-form">
+      <div class="dialog-head"><div><span class="eyebrow">Registro clínico</span><h2 id="session-dialog-title">Nueva sesión</h2></div><button type="button" class="icon-btn" data-close-dialog aria-label="Cerrar">×</button></div>
+      <input type="hidden" name="id">
+      <div class="form-grid two">
+        <label>Semestre<select name="semester"><option value="1">Primer semestre</option><option value="2">Segundo semestre</option></select></label>
+        <label>Fecha<input name="date" type="date" required></label>
+        <label>Hora<input name="time" type="time"></label>
+        <label>Duración (minutos)<input name="duration" type="number" min="1" max="240" value="45"></label>
+        <label class="wide">Objetivo específico<select name="objectiveId" required></select></label>
+        <label>Asistencia<select name="attendance"><option>Presente</option><option>Ausente</option></select></label>
+        <label>Nivel de logro<select name="level"><option value="">Sin evaluar</option><option value="L">L · Logrado</option><option value="D">D · En desarrollo</option><option value="NL">NL · No logrado</option></select></label>
+        <label>Modalidad<select name="modality"><option>Individual</option><option>Grupal</option><option>Teleatención</option><option>En aula</option></select></label>
+        <label>Tipo de apoyo<select name="support"><option value="">No especificado</option><option>Sin apoyo</option><option>Apoyo verbal</option><option>Apoyo visual</option><option>Modelado</option><option>Apoyo gestual</option><option>Apoyo combinado</option></select></label>
+        <label class="wide">Actividad o estrategia aplicada<input name="strategy" placeholder="Ej.: discriminación auditiva con pares mínimos"></label>
+        <label class="wide">Observaciones<textarea name="notes" rows="4" placeholder="Registre apoyos, respuesta, contexto o acuerdos..."></textarea></label>
+      </div>
+      <div class="dialog-actions"><button type="button" data-close-dialog class="ghost">Cancelar</button><button value="default" class="primary" id="save-session-submit">Guardar sesión</button></div>
+    </form>
+  </dialog>
+
+  <input id="restore-input" type="file" accept="application/json" hidden>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script>
+window.FONO_OBJECTIVES = [
+  {
+    "id": "obj-001",
+    "area": "Hab_prearticulatorias",
+    "text": "Modificar el tipo o modo respiratorio",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-002",
+    "area": "Hab_prearticulatorias",
+    "text": "Modificar el patrón de deglución",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-003",
+    "area": "Hab_prearticulatorias",
+    "text": "Eliminar malos hábitos orales",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-004",
+    "area": "Hab_prearticulatorias",
+    "text": "Modificar la intensidad y/o resonancia de la voz",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-005",
+    "area": "Hab_cognitivas",
+    "text": "Potenciar las habilidades de función ejecutiva",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-006",
+    "area": "Hab_cognitivas",
+    "text": "Potenciar las habilidades de atención",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-007",
+    "area": "Hab_cognitivas",
+    "text": "Potenciar las habilidades de memoria",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-008",
+    "area": "Hab_cognitivas",
+    "text": "Aumentar la capacidad de memoria secuencial auditiva",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-009",
+    "area": "Habla",
+    "text": "Lograr una prosodia adecuada",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-010",
+    "area": "Habla",
+    "text": "Lograr una fluidez de habla adecuada",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-011",
+    "area": "Habla",
+    "text": "Lograr una velocidad de habla adecuada",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-012",
+    "area": "Habla",
+    "text": "Lograr un ritmo de habla adecuado",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-013",
+    "area": "Habla",
+    "text": "Lograr la emisión y generalización de todos los fonemas vocálicos",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-014",
+    "area": "Habla",
+    "text": "Lograr la emisión y generalización de todos los fonemas bilabiales",
+    "s1": true,
+    "s2": true
+  },
+  {
+    "id": "obj-015",
+    "area": "Habla",
+    "text": "Lograr la emisión y generalización de todos los fonemas labiodentales",
+    "s1": true,
+    "s2": true
+  },
+  {
+    "id": "obj-016",
+    "area": "Habla",
+    "text": "Lograr la emisión y generalización de todos los fonemas dentales",
+    "s1": true,
+    "s2": true
+  },
+  {
+    "id": "obj-017",
+    "area": "Habla",
+    "text": "Lograr la emisión y generalización de todos los fonemas alveolares",
+    "s1": true,
+    "s2": true
+  },
+  {
+    "id": "obj-018",
+    "area": "Habla",
+    "text": "Lograr la emisión y generalización de todos los fonemas palatales",
+    "s1": true,
+    "s2": true
+  },
+  {
+    "id": "obj-019",
+    "area": "Habla",
+    "text": "Lograr la emisión y generalización de todos los fonemas velares",
+    "s1": true,
+    "s2": true
+  },
+  {
+    "id": "obj-020",
+    "area": "Fonología",
+    "text": "Lograr una adecuada discriminación auditiva no verbal",
+    "s1": true,
+    "s2": true
+  },
+  {
+    "id": "obj-021",
+    "area": "Fonología",
+    "text": "Lograr una adecuada discriminación auditiva verbal",
+    "s1": true,
+    "s2": true
+  },
+  {
+    "id": "obj-022",
+    "area": "Fonología",
+    "text": "Lograr segmentar sílabas",
+    "s1": true,
+    "s2": true
+  },
+  {
+    "id": "obj-023",
+    "area": "Fonología",
+    "text": "Lograr la emisión de sílabas y onomatopeyas",
+    "s1": true,
+    "s2": true
+  },
+  {
+    "id": "obj-024",
+    "area": "Fonología",
+    "text": "Lograr la emisión de bisílabos",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-025",
+    "area": "Fonología",
+    "text": "Lograr la emisión de trisílabos y polisílabos",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-026",
+    "area": "Fonología",
+    "text": "Lograr emisión y generalización de dífonos voc. crecientes  /ue/ /ui/ /uo/ /ua/",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-027",
+    "area": "Fonología",
+    "text": "Lograr emisión y generalización de dífonos voc. crecientes /ie/ /io/ /iu/ /ia/",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-028",
+    "area": "Fonología",
+    "text": "Lograr emisión y generalización de dífonos voc. decrecientes /ai/ /au/ /eu/ /ei/",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-029",
+    "area": "Fonología",
+    "text": "Lograr la emisión y generalización de las sílabas trabantes con /m/",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-030",
+    "area": "Fonología",
+    "text": "Lograr la emisión y generalización de las sílabas trabantes con /l/",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-031",
+    "area": "Fonología",
+    "text": "Lograr la emisión y generalización de las sílabas trabantes con /s/",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-032",
+    "area": "Fonología",
+    "text": "Lograr la emisión y generalización de las sílabas trabantes con /n/",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-033",
+    "area": "Fonología",
+    "text": "Lograr la emisión y generalización de las sílabas trabantes con /r/",
+    "s1": false,
+    "s2": true
+  },
+  {
+    "id": "obj-034",
+    "area": "Fonología",
+    "text": "Lograr la emisión y generalización de todos los dífonos consonánticos con /l/",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-035",
+    "area": "Fonología",
+    "text": "Lograr la emisión y generalización de todos los dífonos consonánticos con /r/",
+    "s1": false,
+    "s2": true
+  },
+  {
+    "id": "obj-036",
+    "area": "Fonología",
+    "text": "Lograr conciencia fonológica de sílabas",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-037",
+    "area": "Fonología",
+    "text": "Lograr conciencia fonológica de vocal inicial",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-038",
+    "area": "Fonología",
+    "text": "Lograr conciencia fonológica de vocal final",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-039",
+    "area": "Fonología",
+    "text": "Lograr conciencia fonológica de sílaba inicial",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-040",
+    "area": "Fonología",
+    "text": "Lograr conciencia fonológica de sílaba  final",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-041",
+    "area": "Fonología",
+    "text": "Lograr conciencia fonológica de rimas",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-042",
+    "area": "Fonología",
+    "text": "Lograr conciencia fonológica de sílaba medial",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-043",
+    "area": "Fonología",
+    "text": "Lograr conciencia fonológica de adición",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-044",
+    "area": "Fonología",
+    "text": "Lograr conciencia fonológica de deleción",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-045",
+    "area": "Fonología",
+    "text": "Lograr conciencia fonológica de análisis",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-046",
+    "area": "Fonología",
+    "text": "Lograr conciencia fonológica de síntesis",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-047",
+    "area": "Fonología",
+    "text": "Lograr conciencia fonológica de inversión",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-048",
+    "area": "Semántica",
+    "text": "Aumentar vocabulario de sustantivos",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-049",
+    "area": "Semántica",
+    "text": "Aumentar vocabulario de verbos",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-050",
+    "area": "Semántica",
+    "text": "Aumentar vocabulario de Adjetivos (calificativos/ otros)",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-051",
+    "area": "Semántica",
+    "text": "Lograr una adecuada fluidez léxica",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-052",
+    "area": "Semántica",
+    "text": "Lograr nominar/definir por uso/función adecuadamente",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-053",
+    "area": "Semántica",
+    "text": "Lograr nominar/definir por atributos/características adecuadamente",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-054",
+    "area": "Semántica",
+    "text": "Lograr identificar y utilizar categorías sem (p. del cuerpo)",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-055",
+    "area": "Semántica",
+    "text": "Lograr identificar y utilizar categorías sem (frutas/verduras)",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-056",
+    "area": "Semántica",
+    "text": "Lograr identificar y utilizar categorías sem (animales)",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-057",
+    "area": "Semántica",
+    "text": "Lograr identificar y utilizar categorías sem (p. de vestir)",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-058",
+    "area": "Semántica",
+    "text": "Lograr identificar y utilizar categorías sem (p. de la casa)",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-059",
+    "area": "Semántica",
+    "text": "Lograr identificar y utilizar categorías sem (m. de transportes)",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-060",
+    "area": "Semántica",
+    "text": "Lograr identificar y utilizar categorías sem (i. musicales)",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-061",
+    "area": "Semántica",
+    "text": "Lograr identificar y utilizar categorías sem (otras)",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-062",
+    "area": "Semántica",
+    "text": "Lograr identificar y utilizar subcategorías semánticas simples",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-063",
+    "area": "Semántica",
+    "text": "Lograr identificar y utilizar categorías sem (otras)",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-064",
+    "area": "Semántica",
+    "text": "Identificar y usar adecuadamente asociaciones semánticas",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-065",
+    "area": "Semántica",
+    "text": "Identificar y nombrar adecuadamente profesiones y oficios",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-066",
+    "area": "Semántica",
+    "text": "Identificar y explicar adecuadamente absurdos  visuales y verbales",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-067",
+    "area": "Semántica",
+    "text": "Identificar y utilizar adecuadamente analogías opuestas",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-068",
+    "area": "Semántica",
+    "text": "Explicar adecuadamente situaciones hipotéticas",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-069",
+    "area": "Semántica",
+    "text": "Identificar y utilizar adecuadamente opuestos (antónimos)",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-070",
+    "area": "Semántica",
+    "text": "Identificar y explicar correctamente situaciones de causa-efecto",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-071",
+    "area": "Semántica",
+    "text": "Identificar y explicar adecuadamente semejanzas y diferencias",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-072",
+    "area": "Morfosintaxis",
+    "text": "Usar adecuadamente verbos en modo condicionales",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-073",
+    "area": "Morfosintaxis",
+    "text": "Ordenar adecuadamente secuencias temporales",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-074",
+    "area": "Morfosintaxis",
+    "text": "Usar adecuadamente sufijos OR/IST",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-075",
+    "area": "Morfosintaxis",
+    "text": "Usar adecuadamente sufijos ÍSIM",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-076",
+    "area": "Morfosintaxis",
+    "text": "Utilizar adecuadamente oraciones con S+P",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-077",
+    "area": "Morfosintaxis",
+    "text": "Utilizar adecuadamente oraciones con CD  y CI",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-078",
+    "area": "Morfosintaxis",
+    "text": "Utilizar adecuadamente oraciones con CC",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-079",
+    "area": "Morfosintaxis",
+    "text": "Utilizar adecuadamente o. negativas",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-080",
+    "area": "Morfosintaxis",
+    "text": "Comprender y responder adecuadamente a la partícula interrogativa ¿Dónde?",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-081",
+    "area": "Morfosintaxis",
+    "text": "Comprender y responder adecuadamente a la partícula interrogativa ¿Cómo?",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-082",
+    "area": "Morfosintaxis",
+    "text": "Comprender y responder adecuadamente a la partícula interrogativa  ¿Cuándo?",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-083",
+    "area": "Morfosintaxis",
+    "text": "Comprender y responder adecuadamente a la partícula interrogativa  ¿Cuánto/s?",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-084",
+    "area": "Morfosintaxis",
+    "text": "Comprender y responder adecuadamente a la partícula interrogativa ¿Por qué?",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-085",
+    "area": "Morfosintaxis",
+    "text": "Diferenciar adecuadamente las partículas interrogativas  ¿Con qué?-¿Con quién?",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-086",
+    "area": "Morfosintaxis",
+    "text": "Diferenciar adecuadamente las partículas interrogativas  ¿Qué?-¿Quién?",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-087",
+    "area": "Morfosintaxis",
+    "text": "Lograr una adecuada concordancia de género",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-088",
+    "area": "Morfosintaxis",
+    "text": "Lograr una adecuada concordancia de número",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-089",
+    "area": "Morfosintaxis",
+    "text": "Usar adecuadamente verbos en infinitivo",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-090",
+    "area": "Morfosintaxis",
+    "text": "Usar adecuadamente verbos copulativos ser/estar",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-091",
+    "area": "Morfosintaxis",
+    "text": "Usar adecuadamente verbos en  pretérito",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-092",
+    "area": "Morfosintaxis",
+    "text": "Usar adecuadamente verbos en futuro",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-093",
+    "area": "Morfosintaxis",
+    "text": "Lograr una adecuada flexión verbal",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-094",
+    "area": "Morfosintaxis",
+    "text": "Usar adecuadamente verbos en gerundio",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-095",
+    "area": "Morfosintaxis",
+    "text": "Identificar y utilizar adecuadamente adverbios de lugar",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-096",
+    "area": "Morfosintaxis",
+    "text": "Identificar y utilizar adecuadamente adverbios de tiempo",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-097",
+    "area": "Morfosintaxis",
+    "text": "Identificar y utilizar adecuadamente adverbios de cantidad",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-098",
+    "area": "Morfosintaxis",
+    "text": "Identificar y utilizar adecuadamente adverbios de modo",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-099",
+    "area": "Morfosintaxis",
+    "text": "Identificar y utilizar adecuadamente adjetivos demostrativos",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-100",
+    "area": "Morfosintaxis",
+    "text": "Identificar y utilizar adecuadamente adjetivos comparativos",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-101",
+    "area": "Morfosintaxis",
+    "text": "Identificar y utilizar adecuadamente pronombres personales",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-102",
+    "area": "Morfosintaxis",
+    "text": "Identificar y utilizar adecuadamente pronombres demostrativos",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-103",
+    "area": "Morfosintaxis",
+    "text": "Identificar y utilizar adecuadamente pronombres posesivos",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-104",
+    "area": "Morfosintaxis",
+    "text": "Identificar y utilizar adecuadamente pronombres reflexivos",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-105",
+    "area": "Morfosintaxis",
+    "text": "Identificar y utilizar adecuadamente pronombres relativos que-quien",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-106",
+    "area": "Morfosintaxis",
+    "text": "Identificar y utilizar adecuadamente pronombres indefinidos algo, alguien",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-107",
+    "area": "Morfosintaxis",
+    "text": "Identificar y utilizar adecuadamente artículos definidos",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-108",
+    "area": "Morfosintaxis",
+    "text": "Identificar y utilizar adecuadamente artículos indefinidos",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-109",
+    "area": "Morfosintaxis",
+    "text": "Usar adecuadamente preposición  \"para\"",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-110",
+    "area": "Morfosintaxis",
+    "text": "Usar adecuadamente preposición  \"a\"",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-111",
+    "area": "Morfosintaxis",
+    "text": "Usar adecuadamente preposición  \"de\"",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-112",
+    "area": "Morfosintaxis",
+    "text": "Usar adecuadamente preposición  \"en\"",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-113",
+    "area": "Morfosintaxis",
+    "text": "Usar adecuadamente preposición  \"con\"",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-114",
+    "area": "Morfosintaxis",
+    "text": "Usar adecuadamente preposición  \"entre\"",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-115",
+    "area": "Morfosintaxis",
+    "text": "Lograr una adecuada comprensión de órdenes con 1 imperativa",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-116",
+    "area": "Morfosintaxis",
+    "text": "Lograr una adecuada comprensión de órdenes con 2 imperativas",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-117",
+    "area": "Morfosintaxis",
+    "text": "Lograr una adecuada comprensión de órdenes con 3 o más imperativas",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-118",
+    "area": "Morfosintaxis",
+    "text": "Utilizar adecuadamente subordinada adverbial causal",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-119",
+    "area": "Morfosintaxis",
+    "text": "Utilizar adecuadamente subordinadas sustantivas",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-120",
+    "area": "Morfosintaxis",
+    "text": "Utilizar adecuadamente los conectores “y” “o”",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-121",
+    "area": "Morfosintaxis",
+    "text": "Lograr el reconocimiento y uso de verbos en voz pasiva",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-122",
+    "area": "Morfosintaxis",
+    "text": "Reconocer y utilizar adecuadamente sujeto tácito",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-123",
+    "area": "Disc.",
+    "text": "Reconocer y expresar adecuadamente componentes del discurso narrativo",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-124",
+    "area": "Disc.",
+    "text": "Lograr un adecuado discurso descriptivo",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-125",
+    "area": "Pragmática",
+    "text": "Lograr una adecuada cinética y proxémica",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-126",
+    "area": "Pragmática",
+    "text": "Lograr un adecuado uso de gestos",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-127",
+    "area": "Pragmática",
+    "text": "Lograr mantener el contacto visual",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-128",
+    "area": "Pragmática",
+    "text": "Lograr una adecuada atención conjunta",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-129",
+    "area": "Pragmática",
+    "text": "Lograr demostrar intención comunicativa verbal y no verbal",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-130",
+    "area": "Pragmática",
+    "text": "Lograr la expresión de peticiones completas",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-131",
+    "area": "Pragmática",
+    "text": "Lograr un adecuado manejo de turnos",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-132",
+    "area": "Pragmática",
+    "text": "Lograr conversaciones atingentes al contexto",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-133",
+    "area": "Pragmática",
+    "text": "Lograr una adecuada mantención de tópicos",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-134",
+    "area": "Pragmática",
+    "text": "Lograr la mantención de diálogos breves o extensos",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-135",
+    "area": "Pragmática",
+    "text": "Lograr una adecuada adaptación al contexto",
+    "s1": false,
+    "s2": false
+  },
+  {
+    "id": "obj-136",
+    "area": "Pragmática",
+    "text": "Lograr una adecuada reparación de quiebres",
+    "s1": false,
+    "s2": false
+  }
+];
+
+  </script>
+  <script>
+(() => {
+  'use strict';
+
+  const STORAGE_KEY = 'fonoplan-v2';
+  const objectives = window.FONO_OBJECTIVES || [];
+  const areas = [...new Set(objectives.map(o => o.area))];
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+  const esc = value => String(value ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+  const uid = () => `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+  const fmtDate = date => date ? new Intl.DateTimeFormat('es-CL', {day:'2-digit', month:'short', year:'numeric'}).format(new Date(`${date}T12:00:00`)) : 'Sin fecha';
+  const today = () => new Date().toISOString().slice(0, 10);
+  const levelName = level => ({L:'Logrado', D:'En desarrollo', NL:'No logrado'}[level] || 'Sin evaluar');
+
+  function makeInitialState() {
+    const studentId = uid();
+    const idByText = new Map(objectives.map(o => [o.text, o.id]));
+    const importedPlan = Object.fromEntries(objectives.filter(o => o.s1 || o.s2).map(o => [o.id, {s1:o.s1, s2:o.s2}]));
+    [
+      ['Potenciar las habilidades de función ejecutiva', 's1'],
+      ['Potenciar las habilidades de memoria', 's2'],
+      ['Aumentar la capacidad de memoria secuencial auditiva', 's2']
+    ].forEach(([text, semester]) => {
+      const id = idByText.get(text);
+      if (id) importedPlan[id] = {...(importedPlan[id] || {s1:false,s2:false}), [semester]:true};
+    });
+    return {
+      version: 1,
+      activeStudentId: studentId,
+      ui: {view:'inicio', planSemester:'all', sessionSemester:'1', reportSemester:'1', reportMode:'latest'},
+      students: [{
+        id: studentId,
+        name: 'Zamara Nauto',
+        course: 'Kinder',
+        professional: 'María José Zamorano Díaz',
+        year: 2026,
+        identifier: '',
+        birthDate: '',
+        school: '',
+        referralReason: '',
+        clinicalBackground: '',
+        diagnosticImpression: '',
+        evaluationDate: '',
+        baseline: {},
+        notes: '',
+        plan: importedPlan,
+        sessions: [
+          {id:uid(), semester:1, date:'', objectiveId:idByText.get('Lograr la emisión y generalización de todos los fonemas dentales'), attendance:'Presente', level:'D', notes:'Registro importado desde el Excel.'},
+          {id:uid(), semester:1, date:'', objectiveId:idByText.get('Potenciar las habilidades de función ejecutiva'), attendance:'Presente', level:'L', notes:'Registro importado desde el Excel.'},
+          {id:uid(), semester:2, date:'', objectiveId:idByText.get('Potenciar las habilidades de memoria'), attendance:'Presente', level:'D', notes:'Registro importado desde el Excel.'},
+          {id:uid(), semester:2, date:'', objectiveId:idByText.get('Aumentar la capacidad de memoria secuencial auditiva'), attendance:'Presente', level:'L', notes:'Registro importado desde el Excel.'}
+        ]
+      }]
+    };
+  }
+
+  function normalizeState(saved) {
+    saved.version = 2;
+    saved.ui = {...{view:'inicio',planSemester:'all',sessionSemester:'1',reportSemester:'1',reportMode:'latest',evaluationArea:'all',evaluationSearch:''}, ...(saved.ui || {})};
+    saved.students = (saved.students || []).map(s => ({
+      identifier:'', birthDate:'', school:'', referralReason:'', clinicalBackground:'', diagnosticImpression:'', evaluationDate:'', baseline:{}, notes:'', plan:{}, sessions:[],
+      ...s,
+      baseline:s.baseline || {}, plan:s.plan || {},
+      sessions:(s.sessions || []).map(x => ({time:'',duration:45,modality:'Individual',support:'',strategy:'',notes:'',...x}))
+    }));
+    if (!saved.activeStudentId || !saved.students.some(s => s.id === saved.activeStudentId)) saved.activeStudentId = saved.students[0]?.id;
+    return saved;
+  }
+
+  function loadState() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      if (saved?.students?.length) return normalizeState(saved);
+    } catch (_) {}
+    return normalizeState(makeInitialState());
+  }
+
+  let state = loadState();
+  let saveTimer;
+  const activeStudent = () => state.students.find(s => s.id === state.activeStudentId) || state.students[0];
+  const getObjective = id => objectives.find(o => o.id === id);
+
+  function save(message = 'Guardado') {
+    $('#save-state').textContent = 'Guardando…';
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(() => {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        $('#save-state').textContent = message;
+      } catch (_) {
+        $('#save-state').textContent = 'No se pudo guardar';
+        toast('No hay espacio suficiente para guardar. Cree un respaldo.');
+      }
+    }, 180);
+  }
+
+  function toast(message) {
+    const el = $('#toast');
+    el.textContent = message;
+    el.classList.add('show');
+    setTimeout(() => el.classList.remove('show'), 2300);
+  }
+
+  function planned(student, semester) {
+    return objectives.filter(o => student.plan[o.id]?.[`s${semester}`]);
+  }
+
+  function objectiveResult(student, objectiveId, semester, mode = 'latest') {
+    const entries = student.sessions.filter(s => Number(s.semester) === Number(semester) && s.objectiveId === objectiveId && s.attendance === 'Presente' && s.level);
+    if (!entries.length) return '';
+    if (mode === 'best') return entries.some(s => s.level === 'L') ? 'L' : entries.some(s => s.level === 'D') ? 'D' : 'NL';
+    return [...entries].sort((a,b) => (a.date || '').localeCompare(b.date || '') || a.id.localeCompare(b.id)).at(-1).level;
+  }
+
+  function stats(student, semester, mode = 'latest') {
+    const selected = planned(student, semester);
+    const results = selected.map(o => ({objective:o, level:objectiveResult(student, o.id, semester, mode)}));
+    const counts = {L:0,D:0,NL:0,blank:0};
+    results.forEach(r => counts[r.level || 'blank']++);
+    const evaluated = counts.L + counts.D + counts.NL;
+    return {selected, results, counts, evaluated, achieved:evaluated ? Math.round(counts.L / evaluated * 100) : 0};
+  }
+
+  function baselineStats(student) {
+    const counts = {L:0,D:0,NL:0,NE:0};
+    objectives.forEach(o => counts[student.baseline[o.id]?.level || 'NE']++);
+    const evaluated = counts.L + counts.D + counts.NL;
+    return {counts,evaluated,coverage:Math.round(evaluated/objectives.length*100)};
+  }
+
+  function ageAt(date) {
+    if (!date) return '';
+    const born = new Date(`${date}T12:00:00`), now = new Date();
+    let years = now.getFullYear()-born.getFullYear();
+    if (now < new Date(now.getFullYear(),born.getMonth(),born.getDate())) years--;
+    return years >= 0 ? `${years} años` : '';
+  }
+
+  function renderStudentSelect() {
+    $('#student-select').innerHTML = state.students.map(s => `<option value="${s.id}" ${s.id === state.activeStudentId ? 'selected' : ''}>${esc(s.name)}</option>`).join('');
+  }
+
+  function pageHead(kicker, title, description, actions = '') {
+    return `<div class="page-head"><div><span class="eyebrow">${kicker}</span><h1>${title}</h1><p>${description}</p></div><div class="head-actions screen-only">${actions}</div></div>`;
+  }
+
+  function renderHome() {
+    const s = activeStudent();
+    const semester = Number(state.ui.reportSemester || 1);
+    const st = stats(s, semester);
+    const present = s.sessions.filter(x => x.attendance === 'Presente').length;
+    const total = s.sessions.length;
+    const attendance = total ? Math.round(present / total * 100) : 0;
+    const baseline = baselineStats(s);
+    const recent = [...s.sessions].sort((a,b) => (b.date || '').localeCompare(a.date || '')).slice(0,5);
+    const areaRows = areas.map(area => {
+      const rs = st.results.filter(r => r.objective.area === area);
+      const done = rs.filter(r => r.level === 'L').length;
+      const evald = rs.filter(r => r.level).length;
+      const pct = evald ? Math.round(done/evald*100) : 0;
+      return rs.length ? `<div class="area-progress"><span>${esc(area.replaceAll('_',' '))}</span><div class="bar"><i style="width:${pct}%"></i></div><b>${pct}%</b></div>` : '';
+    }).join('');
+    $('#view-inicio').innerHTML = `
+      <div class="card hero">
+        <div><span class="eyebrow">Resumen ${semester === 1 ? 'primer' : 'segundo'} semestre</span><h1>${esc(s.name)}</h1><p>Revise la planificación, registre cada sesión y genere el informe de avance desde un solo lugar.</p><div class="hero-actions screen-only"><button class="primary" data-action="new-session">Registrar sesión</button><button class="ghost" data-go="plan">Revisar plan</button></div></div>
+        <div class="hero-metric"><div class="progress-ring" style="--progress:${st.achieved}"><div><strong>${st.achieved}%</strong><span>objetivos logrados</span></div></div></div>
+      </div>
+      <div class="metrics">
+        <div class="card metric"><span class="label">Objetivos planificados</span><strong>${st.selected.length}</strong><small>Semestre ${semester}</small></div>
+        <div class="card metric"><span class="label">Objetivos evaluados</span><strong>${st.evaluated}</strong><small>${st.counts.blank} pendientes</small></div>
+        <div class="card metric"><span class="label">Sesiones registradas</span><strong>${s.sessions.length}</strong><small>Ambos semestres</small></div>
+        <div class="card metric"><span class="label">Asistencia</span><strong>${attendance}%</strong><small>${present} de ${total || 0} registros</small></div>
+        <div class="card metric"><span class="label">Evaluación inicial</span><strong>${baseline.coverage}%</strong><small>${baseline.evaluated} de ${objectives.length} objetivos</small></div>
+      </div>
+      <div class="dashboard-grid">
+        <div class="card"><h2>Avance por área</h2><p class="subtle">Porcentaje de objetivos logrados entre los evaluados.</p><div class="area-list">${areaRows || '<div class="empty">Seleccione objetivos en el plan anual para ver el avance.</div>'}</div></div>
+        <div class="card"><h2>Actividad reciente</h2><p class="subtle">Últimos registros de seguimiento.</p><div class="activity-list">${recent.length ? recent.map(x => { const o=getObjective(x.objectiveId); return `<div class="activity"><div class="date-box">${x.date ? esc(x.date.slice(5).replace('-','/')) : '—'}</div><div><b>${esc(o?.text || 'Objetivo eliminado')}</b><small>${esc(x.attendance)} · ${levelName(x.level)}</small></div><span class="pill ${x.level || 'blank'}">${x.level || '—'}</span></div>`; }).join('') : '<div class="empty">Aún no hay sesiones.</div>'}</div></div>
+      </div>`;
+  }
+
+  function renderProfile() {
+    const s = activeStudent();
+    $('#view-ficha').innerHTML = `${pageHead('Antecedentes','Ficha del estudiante','Estos datos aparecen en la planificación y en los informes.')}
+      <div class="card form-card">
+        <form id="profile-form" class="form-grid two">
+          <label>Nombre completo<input name="name" value="${esc(s.name)}" required></label>
+          <label>Curso<input name="course" value="${esc(s.course)}" required></label>
+          <label>RUN o identificador<input name="identifier" value="${esc(s.identifier || '')}" placeholder="Opcional"></label>
+          <label>Fecha de nacimiento<input name="birthDate" type="date" value="${esc(s.birthDate || '')}"></label>
+          <label>Establecimiento<input name="school" value="${esc(s.school || '')}"></label>
+          <label>Profesional responsable<input name="professional" value="${esc(s.professional)}" required></label>
+          <label>Año<input name="year" type="number" min="2020" max="2100" value="${esc(s.year)}" required></label>
+          <label class="wide">Motivo de derivación o consulta<textarea name="referralReason" rows="3">${esc(s.referralReason || '')}</textarea></label>
+          <label class="wide">Antecedentes clínicos y educativos relevantes<textarea name="clinicalBackground" rows="4">${esc(s.clinicalBackground || '')}</textarea></label>
+          <label class="wide">Impresión diagnóstica profesional<textarea name="diagnosticImpression" rows="4" placeholder="Consigne conclusiones profesionales. El sistema no genera diagnósticos automáticos.">${esc(s.diagnosticImpression || '')}</textarea></label>
+          <label class="wide">Antecedentes u observaciones generales<textarea name="notes" rows="5">${esc(s.notes || '')}</textarea></label>
+          <div class="wide head-actions"><button class="primary" type="submit">Guardar cambios</button><button class="secondary" type="button" id="restore-btn">Importar respaldo</button></div>
+        </form>
+        <div class="danger-zone"><div><strong>Eliminar ficha</strong><div class="subtle">Se borrarán su planificación y registros en este equipo.</div></div><button class="danger" id="delete-student-btn">Eliminar</button></div>
+      </div>`;
+  }
+
+  function renderEvaluation() {
+    const s = activeStudent();
+    const bs = baselineStats(s);
+    const search = state.ui.evaluationSearch || '';
+    const areaFilter = state.ui.evaluationArea || 'all';
+    const filtered = objectives.filter(o => (areaFilter === 'all' || o.area === areaFilter) && (!search || o.text.toLowerCase().includes(search.toLowerCase())));
+    const groups = areas.map(area => {
+      const rows = filtered.filter(o => o.area === area);
+      if (!rows.length) return '';
+      const evaluated = rows.filter(o => s.baseline[o.id]?.level).length;
+      return `<div class="card plan-group"><div class="plan-group-head"><h3>${esc(area.replaceAll('_',' '))}</h3><span>${evaluated} de ${rows.length} evaluados</span></div>${rows.map(o => {
+        const level = s.baseline[o.id]?.level || '';
+        return `<div class="evaluation-row"><span>${esc(o.text)}</span><select data-baseline="${o.id}" aria-label="Resultado inicial: ${esc(o.text)}"><option value="" ${!level?'selected':''}>No evaluado</option><option value="L" ${level==='L'?'selected':''}>Logrado / fortaleza</option><option value="D" ${level==='D'?'selected':''}>En desarrollo</option><option value="NL" ${level==='NL'?'selected':''}>No logrado / prioridad</option></select></div>`;
+      }).join('')}</div>`;
+    }).join('');
+    $('#view-evaluacion').innerHTML = `${pageHead('Línea de base','Evaluación inicial','Registre el desempeño observado antes de definir el plan. Esta sección organiza el juicio profesional, no lo reemplaza.', '<button class="secondary" data-prioritize="2">Planificar prioridades en S2</button><button class="primary" data-prioritize="1">Planificar prioridades en S1</button>')}
+      <div class="clinical-note"><strong>Uso profesional:</strong> marque solo objetivos efectivamente evaluados. Los objetivos “En desarrollo” y “No logrado” pueden incorporarse al plan con los botones superiores.</div>
+      <div class="evaluation-layout">
+        <aside class="card evaluation-summary"><span class="eyebrow">Cobertura</span><span class="summary-number">${bs.coverage}%</span><div class="subtle">${bs.evaluated} de ${objectives.length} objetivos evaluados</div><div class="coverage"><i style="width:${bs.coverage}%"></i></div><div class="legend"><div><span>Fortalezas / logrados</span><b>${bs.counts.L}</b></div><div><span>En desarrollo</span><b>${bs.counts.D}</b></div><div><span>Prioridades</span><b>${bs.counts.NL}</b></div><div><span>No evaluados</span><b>${bs.counts.NE}</b></div></div><label style="display:grid;gap:7px;margin-top:20px;font-size:12px;font-weight:800">Fecha de evaluación<input id="evaluation-date" type="date" value="${esc(s.evaluationDate || '')}" style="border:1px solid #cedbd8;border-radius:9px;padding:9px"></label></aside>
+        <div><div class="filter-row" style="grid-template-columns:1fr 220px"><input id="evaluation-search" type="search" placeholder="Buscar objetivo…" value="${esc(search)}"><select id="evaluation-area"><option value="all">Todas las áreas</option>${areas.map(a=>`<option value="${esc(a)}" ${areaFilter===a?'selected':''}>${esc(a.replaceAll('_',' '))}</option>`).join('')}</select></div>${groups || '<div class="empty">No hay resultados para estos filtros.</div>'}</div>
+      </div>`;
+  }
+
+  function renderPlan() {
+    const s = activeStudent();
+    const search = state.ui.planSearch || '';
+    const areaFilter = state.ui.planArea || 'all';
+    const semesterFilter = state.ui.planSemester || 'all';
+    const filtered = objectives.filter(o => (areaFilter === 'all' || o.area === areaFilter) && (!search || o.text.toLowerCase().includes(search.toLowerCase())) && (semesterFilter === 'all' || s.plan[o.id]?.[`s${semesterFilter}`]));
+    const groups = areas.map(area => {
+      const rows = filtered.filter(o => o.area === area);
+      if (!rows.length) return '';
+      const selected = rows.filter(o => s.plan[o.id]?.s1 || s.plan[o.id]?.s2).length;
+      return `<div class="card plan-group"><div class="plan-group-head"><h3>${esc(area.replaceAll('_',' '))}</h3><span>${selected} seleccionados</span></div>${rows.map(o => `<div class="objective-row"><span>${esc(o.text)}</span><label class="semester-toggle"><input type="checkbox" data-objective="${o.id}" data-semester="1" ${s.plan[o.id]?.s1 ? 'checked' : ''}> 1er sem.</label><label class="semester-toggle"><input type="checkbox" data-objective="${o.id}" data-semester="2" ${s.plan[o.id]?.s2 ? 'checked' : ''}> 2do sem.</label></div>`).join('')}</div>`;
+    }).join('');
+    $('#view-plan').innerHTML = `${pageHead('Planificación','Plan anual','Seleccione los objetivos específicos que se trabajarán en cada semestre.', '<button class="secondary" id="clear-plan-btn">Limpiar filtros</button>')}
+      <div class="filter-row"><input id="plan-search" type="search" placeholder="Buscar entre 136 objetivos…" value="${esc(search)}"><select id="plan-area"><option value="all">Todas las áreas</option>${areas.map(a=>`<option value="${esc(a)}" ${areaFilter===a?'selected':''}>${esc(a.replaceAll('_',' '))}</option>`).join('')}</select><select id="plan-semester"><option value="all">Todos los objetivos</option><option value="1" ${semesterFilter==='1'?'selected':''}>Seleccionados S1</option><option value="2" ${semesterFilter==='2'?'selected':''}>Seleccionados S2</option></select></div>
+      ${groups || '<div class="empty">No hay objetivos que coincidan con los filtros.</div>'}`;
+  }
+
+  function renderSessions() {
+    const s = activeStudent();
+    const semester = Number(state.ui.sessionSemester || 1);
+    const rows = [...s.sessions].filter(x => Number(x.semester) === semester).sort((a,b) => (b.date || '').localeCompare(a.date || ''));
+    $('#view-sesiones').innerHTML = `${pageHead('Seguimiento','Registro de sesiones','Equivale a las hojas S1 y S2 del Excel, sin el límite de 50 registros.', '<button class="primary" data-action="new-session">Nueva sesión</button>')}
+      <div class="tabs"><button class="tab-btn ${semester===1?'active':''}" data-session-sem="1">Primer semestre</button><button class="tab-btn ${semester===2?'active':''}" data-session-sem="2">Segundo semestre</button></div>
+      <div class="table-wrap"><table class="data-table"><thead><tr><th>Fecha</th><th>Objetivo específico</th><th>Asistencia</th><th>Nivel</th><th>Intervención y observaciones</th><th></th></tr></thead><tbody>${rows.length ? rows.map(x => { const o=getObjective(x.objectiveId); return `<tr><td>${fmtDate(x.date)}${x.time?`<div class="subtle">${esc(x.time)} hrs.</div>`:''}</td><td><strong>${esc(o?.text || 'Objetivo no disponible')}</strong><div class="subtle">${esc(o?.area?.replaceAll('_',' ') || '')}</div><div class="session-meta"><span>${esc(x.modality || 'Individual')}</span><span>${esc(x.duration || 45)} min</span>${x.support?`<span>${esc(x.support)}</span>`:''}</div></td><td>${esc(x.attendance)}</td><td><span class="pill ${x.level || 'blank'}">${x.level ? `${x.level} · ${levelName(x.level)}` : 'Sin evaluar'}</span></td><td>${x.strategy?`<strong>${esc(x.strategy)}</strong><br>`:''}${esc(x.notes || '—')}</td><td><div class="row-actions"><button class="icon-btn" data-edit-session="${x.id}" title="Editar" aria-label="Editar sesión">✎</button><button class="icon-btn" data-delete-session="${x.id}" title="Eliminar" aria-label="Eliminar sesión">×</button></div></td></tr>`; }).join('') : '<tr><td colspan="6"><div class="empty">No hay sesiones registradas en este semestre.</div></td></tr>'}</tbody></table></div>`;
+  }
+
+  function narrative(student, semester, st) {
+    if (!st.evaluated) return 'Aún no hay objetivos evaluados para generar una síntesis de avance.';
+    const byArea = areas.map(area => {
+      const rs = st.results.filter(r => r.objective.area === area && r.level);
+      return {area, count:rs.length, l:rs.filter(r => r.level==='L').length, nl:rs.filter(r => r.level==='NL').length};
+    }).filter(x => x.count);
+    const strength = [...byArea].sort((a,b)=>(b.l/b.count)-(a.l/a.count))[0];
+    const support = [...byArea].sort((a,b)=>(b.nl/b.count)-(a.nl/a.count))[0];
+    let text = `Durante el ${semester === 1 ? 'primer' : 'segundo'} semestre se evaluaron ${st.evaluated} de ${st.selected.length} objetivos planificados. ${st.counts.L} se encuentran logrados, ${st.counts.D} en desarrollo y ${st.counts.NL} no logrados.`;
+    if (strength?.l) text += ` El mayor avance relativo se observa en ${strength.area.replaceAll('_',' ')}.`;
+    if (support?.nl) text += ` Se sugiere mantener apoyos y seguimiento en ${support.area.replaceAll('_',' ')}.`;
+    return text;
+  }
+
+  function renderReport() {
+    const s = activeStudent();
+    const semester = Number(state.ui.reportSemester || 1);
+    const mode = state.ui.reportMode || 'latest';
+    const st = stats(s, semester, mode);
+    const grouped = areas.map(area => {
+      const rs=st.results.filter(r=>r.objective.area===area);
+      return rs.length ? `<div class="report-area"><h3>${esc(area.replaceAll('_',' '))}</h3>${rs.map(r=>{const initial=s.baseline[r.objective.id]?.level||'';return `<div class="report-objective"><span>${esc(r.objective.text)}${initial?`<small class="subtle" style="display:block">Línea de base: ${levelName(initial)}</small>`:''}</span><span class="pill ${r.level || 'blank'}">${r.level ? levelName(r.level) : 'Sin evaluar'}</span></div>`;}).join('')}</div>` : '';
+    }).join('');
+    const pct = key => st.evaluated ? Math.round(st.counts[key]/st.evaluated*100) : 0;
+    $('#view-informe').innerHTML = `${pageHead('Resultados','Informe semestral','Vista lista para imprimir o guardar como PDF.', '<button class="secondary" id="export-csv-btn">Exportar CSV</button><button class="primary" id="print-report-btn">Imprimir / PDF</button>')}
+      <div class="screen-only" style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px"><div class="tabs" style="margin:0"><button class="tab-btn ${semester===1?'active':''}" data-report-sem="1">Primer semestre</button><button class="tab-btn ${semester===2?'active':''}" data-report-sem="2">Segundo semestre</button></div><label class="subtle">Cálculo del resultado: <select id="report-mode"><option value="latest" ${mode==='latest'?'selected':''}>Última evaluación</option><option value="best" ${mode==='best'?'selected':''}>Mejor logro (como Excel)</option></select></label></div>
+      <article class="report-sheet">
+        <div class="report-title"><h1>Informe fonoaudiológico de avance</h1></div>
+        <div class="report-meta"><span><strong>Alumno:</strong> ${esc(s.name)}</span><span><strong>Curso:</strong> ${esc(s.course)}</span><span><strong>Identificador:</strong> ${esc(s.identifier || 'No consignado')}</span><span><strong>Edad:</strong> ${esc(ageAt(s.birthDate) || 'No consignada')}</span><span><strong>Establecimiento:</strong> ${esc(s.school || 'No consignado')}</span><span><strong>Profesional:</strong> ${esc(s.professional)}</span><span><strong>Año:</strong> ${esc(s.year)}</span><span><strong>Período:</strong> ${semester===1?'Primer':'Segundo'} semestre</span><span><strong>Fecha evaluación inicial:</strong> ${s.evaluationDate?fmtDate(s.evaluationDate):'No consignada'}</span><span><strong>Criterio:</strong> ${mode==='latest'?'Última evaluación':'Mejor logro registrado'}</span></div>
+        ${(s.referralReason||s.diagnosticImpression)?`<div class="report-clinical">${s.referralReason?`<div><strong>Motivo de derivación</strong>${esc(s.referralReason)}</div>`:''}${s.diagnosticImpression?`<div><strong>Impresión diagnóstica</strong>${esc(s.diagnosticImpression)}</div>`:''}</div>`:''}
+        <p class="report-intro">${esc(narrative(s,semester,st))}</p>
+        <p class="report-intro">Se registraron <strong>${s.sessions.filter(x=>Number(x.semester)===semester).length}</strong> sesiones en el período, con <strong>${s.sessions.filter(x=>Number(x.semester)===semester&&x.attendance==='Presente').length}</strong> asistencias.</p>
+        <div class="result-grid"><div class="result-box L"><strong>${pct('L')}%</strong>Contenidos logrados</div><div class="result-box D"><strong>${pct('D')}%</strong>En desarrollo</div><div class="result-box NL"><strong>${pct('NL')}%</strong>No logrados</div></div>
+        ${grouped || '<div class="empty">No hay objetivos planificados para este semestre.</div>'}
+        <div class="report-notes"><strong>Observaciones y/o sugerencias</strong><p>${esc(s.notes || 'Sin observaciones generales registradas.')}</p></div>
+        <div class="signature">Firma y timbre<br>${esc(s.professional)}</div>
+      </article>`;
+  }
+
+  function render() {
+    renderStudentSelect();
+    renderHome(); renderProfile(); renderEvaluation(); renderPlan(); renderSessions(); renderReport();
+    $$('.view').forEach(v => v.classList.toggle('active', v.id === `view-${state.ui.view}`));
+    $$('.nav-item').forEach(b => b.classList.toggle('active', b.dataset.view === state.ui.view));
+  }
+
+  function go(view) {
+    state.ui.view = view;
+    render(); save();
+    window.scrollTo({top:0, behavior:'smooth'});
+    $('.sidebar').classList.remove('open');
+  }
+
+  function openSession(session = null) {
+    const form = $('#session-form');
+    form.reset();
+    form.elements.id.value = session?.id || '';
+    form.elements.semester.value = session?.semester || state.ui.sessionSemester || 1;
+    form.elements.date.value = session?.date || today();
+    form.elements.time.value = session?.time || '';
+    form.elements.duration.value = session?.duration || 45;
+    populateObjectiveOptions(form.elements.semester.value, session?.objectiveId);
+    form.elements.attendance.value = session?.attendance || 'Presente';
+    form.elements.level.value = session?.level || '';
+    form.elements.modality.value = session?.modality || 'Individual';
+    form.elements.support.value = session?.support || '';
+    form.elements.strategy.value = session?.strategy || '';
+    form.elements.notes.value = session?.notes || '';
+    form.elements.level.disabled = form.elements.attendance.value === 'Ausente';
+    $('#session-dialog-title').textContent = session ? 'Editar sesión' : 'Nueva sesión';
+    $('#session-dialog').showModal();
+  }
+
+  function populateObjectiveOptions(semester, selected = '') {
+    const list = planned(activeStudent(), semester);
+    const source = list.length ? list : objectives;
+    $('#session-form').elements.objectiveId.innerHTML = `<option value="">Seleccione un objetivo…</option>${source.map(o=>`<option value="${o.id}" ${o.id===selected?'selected':''}>${esc(o.area.replaceAll('_',' '))} · ${esc(o.text)}</option>`).join('')}`;
+  }
+
+  function createBackup() {
+    const blob = new Blob([JSON.stringify(state, null, 2)], {type:'application/json'});
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `fonoplan-respaldo-${today()}.json`; a.click(); URL.revokeObjectURL(a.href); toast('Respaldo creado');
+  }
+
+  function exportCsv() {
+    const s=activeStudent(), sem=Number(state.ui.reportSemester||1), st=stats(s,sem,state.ui.reportMode);
+    const rows=[['Estudiante','Curso','Año','Semestre','Área','Objetivo','Resultado'],...st.results.map(r=>[s.name,s.course,s.year,sem,r.objective.area,r.objective.text,levelName(r.level)])];
+    const csv='\ufeff'+rows.map(r=>r.map(v=>`"${String(v).replaceAll('"','""')}"`).join(';')).join('\r\n');
+    const blob=new Blob([csv],{type:'text/csv;charset=utf-8'}), a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=`informe-${s.name.toLowerCase().replace(/[^a-z0-9]+/gi,'-')}-s${sem}.csv`; a.click(); URL.revokeObjectURL(a.href);
+  }
+
+  document.addEventListener('click', e => {
+    const nav=e.target.closest('[data-view]'); if(nav){go(nav.dataset.view);return;}
+    const direct=e.target.closest('[data-go]'); if(direct){go(direct.dataset.go);return;}
+    if(e.target.closest('#menu-btn')) $('.sidebar').classList.toggle('open');
+    const closeDialog=e.target.closest('[data-close-dialog]'); if(closeDialog){closeDialog.closest('dialog')?.close();return;}
+    if(e.target.closest('#new-student-btn')) { $('#student-form').reset(); $('#student-form').elements.year.value=new Date().getFullYear(); $('#student-dialog').showModal(); }
+    if(e.target.closest('[data-action="new-session"]')) openSession();
+    const ss=e.target.closest('[data-session-sem]'); if(ss){state.ui.sessionSemester=ss.dataset.sessionSem;render();save();}
+    const rs=e.target.closest('[data-report-sem]'); if(rs){state.ui.reportSemester=rs.dataset.reportSem;render();save();}
+    const edit=e.target.closest('[data-edit-session]'); if(edit){openSession(activeStudent().sessions.find(x=>x.id===edit.dataset.editSession));}
+    const del=e.target.closest('[data-delete-session]'); if(del && confirm('¿Eliminar este registro de sesión?')){const s=activeStudent();s.sessions=s.sessions.filter(x=>x.id!==del.dataset.deleteSession);render();save();toast('Sesión eliminada');}
+    if(e.target.closest('#backup-btn')) createBackup();
+    if(e.target.closest('#restore-btn')) $('#restore-input').click();
+    if(e.target.closest('#print-report-btn')) window.print();
+    if(e.target.closest('#export-csv-btn')) exportCsv();
+    if(e.target.closest('#clear-plan-btn')){state.ui.planSearch='';state.ui.planArea='all';state.ui.planSemester='all';render();}
+    const prioritize=e.target.closest('[data-prioritize]'); if(prioritize){
+      const sem=`s${prioritize.dataset.prioritize}`, s=activeStudent(); let added=0;
+      objectives.forEach(o=>{const level=s.baseline[o.id]?.level;if(level==='D'||level==='NL'){s.plan[o.id]=s.plan[o.id]||{s1:false,s2:false};if(!s.plan[o.id][sem]){s.plan[o.id][sem]=true;added++;}}});
+      render();save();toast(`${added} prioridades agregadas al semestre ${prioritize.dataset.prioritize}`);
+    }
+    if(e.target.closest('#delete-student-btn')){
+      if(state.students.length===1){alert('Debe existir al menos una ficha. Cree otra antes de eliminar esta.');return;}
+      if(confirm(`¿Eliminar la ficha de ${activeStudent().name}? Esta acción no se puede deshacer.`)){state.students=state.students.filter(x=>x.id!==state.activeStudentId);state.activeStudentId=state.students[0].id;go('inicio');toast('Ficha eliminada');}
+    }
+  });
+
+  document.addEventListener('change', e => {
+    if(e.target.id==='student-select'){state.activeStudentId=e.target.value;render();save();}
+    if(e.target.matches('[data-objective]')){const s=activeStudent(),id=e.target.dataset.objective,key=`s${e.target.dataset.semester}`;s.plan[id]=s.plan[id]||{s1:false,s2:false};s.plan[id][key]=e.target.checked;save();renderHome();renderReport();}
+    if(e.target.id==='plan-area'){state.ui.planArea=e.target.value;renderPlan();}
+    if(e.target.id==='plan-semester'){state.ui.planSemester=e.target.value;renderPlan();}
+    if(e.target.id==='report-mode'){state.ui.reportMode=e.target.value;renderReport();save();}
+    if(e.target.name==='semester' && e.target.closest('#session-form')) populateObjectiveOptions(e.target.value);
+    if(e.target.name==='attendance' && e.target.closest('#session-form')){const level=$('#session-form').elements.level;level.disabled=e.target.value==='Ausente';if(level.disabled)level.value='';}
+    if(e.target.matches('[data-baseline]')){const s=activeStudent(),id=e.target.dataset.baseline;if(e.target.value)s.baseline[id]={...(s.baseline[id]||{}),level:e.target.value};else delete s.baseline[id];renderEvaluation();renderReport();save();}
+    if(e.target.id==='evaluation-area'){state.ui.evaluationArea=e.target.value;renderEvaluation();}
+    if(e.target.id==='evaluation-date'){activeStudent().evaluationDate=e.target.value;save();renderReport();}
+  });
+
+  document.addEventListener('input', e => {
+    if(e.target.id==='plan-search'){state.ui.planSearch=e.target.value;renderPlan();const input=$('#plan-search');input.focus();input.setSelectionRange(input.value.length,input.value.length);}
+    if(e.target.id==='evaluation-search'){state.ui.evaluationSearch=e.target.value;renderEvaluation();const input=$('#evaluation-search');input.focus();input.setSelectionRange(input.value.length,input.value.length);}
+  });
+
+  $('#profile-form')?.addEventListener('submit', () => {});
+  document.addEventListener('submit', e => {
+    e.preventDefault();
+    if(e.target.id==='profile-form'){
+      const data=Object.fromEntries(new FormData(e.target)); Object.assign(activeStudent(),data,{year:Number(data.year)}); render();save();toast('Ficha actualizada');
+    }
+    if(e.target.id==='student-form'){
+      const data=Object.fromEntries(new FormData(e.target)); if(!data.name||!data.course||!data.professional)return;
+      const item={id:uid(),name:data.name.trim(),course:data.course.trim(),professional:data.professional.trim(),year:Number(data.year),identifier:'',birthDate:'',school:'',referralReason:'',clinicalBackground:'',diagnosticImpression:'',evaluationDate:'',baseline:{},notes:'',plan:{},sessions:[]}; state.students.push(item);state.activeStudentId=item.id;$('#student-dialog').close();go('ficha');toast('Ficha creada');
+    }
+    if(e.target.id==='session-form'){
+      const data=Object.fromEntries(new FormData(e.target)); if(!data.date||!data.objectiveId)return;
+      const s=activeStudent(), item={id:data.id||uid(),semester:Number(data.semester),date:data.date,time:data.time||'',duration:Number(data.duration)||45,objectiveId:data.objectiveId,attendance:data.attendance,level:data.attendance==='Ausente'?'':data.level,modality:data.modality||'Individual',support:data.support||'',strategy:data.strategy.trim(),notes:data.notes.trim()};
+      const i=s.sessions.findIndex(x=>x.id===item.id); if(i>=0)s.sessions[i]=item;else s.sessions.push(item); state.ui.sessionSemester=String(item.semester);$('#session-dialog').close();render();save();toast(i>=0?'Sesión actualizada':'Sesión registrada');
+    }
+  });
+
+  $('#restore-input').addEventListener('change', async e => {
+    const file=e.target.files[0]; if(!file)return;
+    try{const imported=JSON.parse(await file.text());if(!imported.students?.length)throw new Error();if(confirm('¿Reemplazar los datos actuales por este respaldo?')){state=normalizeState(imported);render();save('Respaldo restaurado');toast('Respaldo restaurado');}}catch(_){alert('El archivo no es un respaldo válido de FonoPlan.');} e.target.value='';
+  });
+
+  render();
+})();
+
+  </script>
+</body>
+</html>
